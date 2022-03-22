@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/hashicorp/hcl/v2"
 )
 
 // Resource represents a single "resource" or "data" block within a module.
@@ -13,6 +15,8 @@ type Resource struct {
 	Name string       `json:"name"`
 
 	Provider ProviderRef `json:"provider"`
+
+	Body *hcl.BodyContent `json:"-"`
 
 	Pos SourcePos `json:"pos"`
 }
