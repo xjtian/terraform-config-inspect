@@ -253,10 +253,10 @@ func LoadModuleFromFile(file *hcl.File, mod *Module) hcl.Diagnostics {
 			name := block.Labels[1]
 
 			r := &Resource{
-				Type: typeName,
-				Name: name,
-				Pos:  sourcePosHCL(block.DefRange),
-				Body: content,
+				Type:        typeName,
+				Name:        name,
+				Pos:         sourcePosHCL(block.DefRange),
+				SourceBlock: block,
 			}
 
 			var resourcesMap map[string]*Resource

@@ -16,9 +16,9 @@ type Resource struct {
 
 	Provider ProviderRef `json:"provider"`
 
-	Body *hcl.BodyContent `json:"-"`
-
 	Pos SourcePos `json:"pos"`
+
+	SourceBlock *hcl.Block `json:"-"`
 }
 
 // MapKey returns a string that can be used to uniquely identify the receiver
